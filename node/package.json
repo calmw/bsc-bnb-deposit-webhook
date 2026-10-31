@@ -1,0 +1,10 @@
+{
+  "name": "bsc-bnb-deposit-webhook",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test lib.test.mjs"
+  }
+}

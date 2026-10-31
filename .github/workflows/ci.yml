@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        lang: [node, python, go]
+    steps:
+      - uses: actions/checkout@v4
+      - if: matrix.lang == 'node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - if: matrix.lang == 'python'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      - if: matrix.lang == 'go'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go/go.mod
+          cache: false
+
+      - name: Unit tests
+        working-directory: ${{ matrix.lang }}
+        run: |
+          case "${{ matrix.lang }}" in
+            node) npm test ;;
+            python) python -m unittest discover -v ;;
+            go) test -z "$(gofmt -l .)" && go vet ./... && go test -v ./... ;;
+          esac
+
+      - name: End-to-end
+        run: ./e2e.sh ${{ matrix.lang }}
