@@ -1,6 +1,5 @@
 # BSC BNB 充值到账 Webhook 接收端
 
-[![CI](https://github.com/calmw/bsc-bnb-deposit-webhook/actions/workflows/ci.yml/badge.svg)](https://github.com/calmw/bsc-bnb-deposit-webhook/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [English](README.md) | 简体中文
