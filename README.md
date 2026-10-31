@@ -174,6 +174,7 @@ cd go && go test ./...
 
 - [BNB webhook and REST reference](https://bscquery.com/docs/bnb?utm_source=github&utm_medium=referral&utm_campaign=examples)
 - [BNB balance monitor](https://bscquery.com/bnb?utm_source=github&utm_medium=referral&utm_campaign=examples)
+- USDT and other BEP-20 deposits, or events of your own contract: see [bsc-contract-events-graphql](https://github.com/calmw/bsc-contract-events-graphql).
 
 ## License
 

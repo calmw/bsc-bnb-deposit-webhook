@@ -174,6 +174,7 @@ cd go && go test ./...
 
 - [BNB Webhook 与 REST 接口文档](https://bscquery.com/docs/bnb?utm_source=github&utm_medium=referral&utm_campaign=examples)
 - [BNB 余额监控](https://bscquery.com/bnb?utm_source=github&utm_medium=referral&utm_campaign=examples)
+- USDT 等 BEP-20 代币到账、自己合约的事件：见 [bsc-contract-events-graphql](https://github.com/calmw/bsc-contract-events-graphql/blob/main/README.zh-CN.md)。
 
 ## 许可证
 

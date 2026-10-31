@@ -93,7 +93,10 @@ test('backfill follows nextCursor and dedupes', async (t) => {
     res.end(JSON.stringify(pages[url.searchParams.get('cursor') ?? '']))
   })
   await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve))
-  t.after(() => server.close())
+  t.after(() => {
+    server.closeAllConnections()
+    server.close()
+  })
 
   const store = newStore()
   const api = `http://127.0.0.1:${server.address().port}`
